@@ -9,7 +9,7 @@ export const sendEmail = async (payload: {
 }) => {
   try {
     const response = await resend.emails.send({
-      from: "Doe <no-reply@test.com>",
+      from: process.env.RESEND_FROM!,
       ...payload,
     });
 
